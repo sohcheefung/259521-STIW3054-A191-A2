@@ -15,16 +15,16 @@ public class savetoexcel {
 
              Json link = new Json();
              HSSFWorkbook workbook = new HSSFWorkbook();
-             HSSFSheet sheet = workbook.createSheet("Statisic");
+             HSSFSheet sheet = workbook.createSheet("Statistic");
             
              //create row Header
              Row rowHeader = sheet.createRow(0);
-             rowHeader.createCell(0).setCellValue("         Login ID          ");
-             rowHeader.createCell(1).setCellValue("         Repo            ");
-             rowHeader.createCell(2).setCellValue("         Followers      ");
-             rowHeader.createCell(3).setCellValue("         Events      ");
-             rowHeader.createCell(4).setCellValue("         Subcriptions      ");
-             rowHeader.createCell(5).setCellValue("         Type      ");
+             rowHeader.createCell(0).setCellValue("    Login ID          ");
+             rowHeader.createCell(1).setCellValue("    Number of Repositories   ");
+             rowHeader.createCell(2).setCellValue("    Number of Followers      ");
+             rowHeader.createCell(3).setCellValue("    Number of Events         ");
+             rowHeader.createCell(4).setCellValue("    Number of Subcriptions   ");
+             rowHeader.createCell(5).setCellValue("    Type      ");
 
              //set row heading size, font and position
              for (int i = 0; i <= 5; i++) {

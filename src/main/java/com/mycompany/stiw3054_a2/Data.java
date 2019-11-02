@@ -12,6 +12,7 @@ public class Data {
     private String followersId, Type;
     private int totalrepos, totalfollowers, totalevents, totalsubscriptions;
     
+    
     public Data(String followersId, int totalrepos, int totalfollowers, int totalevents, int totalsubscriptions, String Type) {
         super();
         this.followersId = followersId;

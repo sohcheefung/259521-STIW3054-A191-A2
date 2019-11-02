@@ -7,13 +7,17 @@ package com.mycompany.stiw3054_a2;
  */
 public class Main {
     public static void main(String[] args){
-    try{
+        try{
         
-    savetoexcel start = new savetoexcel();
-    start.writeData();
+            savetoexcel start = new savetoexcel();
+            start.writeData();
+            System.out.println("Writing to excel");
+            System.out.println("saving");
+            System.out.println("done");
     
-    }catch(Exception e){
+        }catch(Exception e)
+        {
            System.out.println("Program execution failed...");
         }
-}
+    }
 }
