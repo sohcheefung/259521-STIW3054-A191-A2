@@ -14,19 +14,17 @@ import org.json.JSONException;
 public class UrlArray {
     public static JSONArray UrlArray(String url) throws IOException, JSONException {
         
-    InputStream input = new URL(url).openStream();
-    try {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        String Text = Url.Url(reader);
-        JSONArray data = new JSONArray(Text);
-        return data;
-        }   
-        finally 
-        {
-           input.close();
+        InputStream input = new URL(url).openStream();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
+            String Text = Url.Url(reader);
+            JSONArray data = new JSONArray(Text);
+            return data;
+            }   
+            finally 
+            {
+            input.close();
+            }
         }
-    }
-
-    
     }
 

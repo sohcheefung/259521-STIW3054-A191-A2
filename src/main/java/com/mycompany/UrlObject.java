@@ -13,16 +13,17 @@ import org.json.JSONObject;
 
 public class UrlObject {
      public static JSONObject UrlObject(String url) throws IOException, JSONException {
-    InputStream input = new URL(url).openStream();
-    try {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
-        String Text = Url.Url(reader);
-        JSONObject data1 = new JSONObject(Text);
-        return data1;
-        }   
-        finally 
-        {
-           input.close();
+         
+        InputStream input = new URL(url).openStream();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
+            String Text = Url.Url(reader);
+            JSONObject data1 = new JSONObject(Text);
+            return data1;
+            }   
+            finally 
+            {
+                input.close();
+            }
         }
     }
-}

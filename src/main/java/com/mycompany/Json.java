@@ -29,7 +29,7 @@ public List<Define> Scrape(){
         
     try{
         
-        JSONArray URL = UrlArray.UrlArray("https://api.github.com/users/zhamri/followers");
+        JSONArray URL = UrlArray.UrlArray("https://api.github.com/users/jasonway96/followers");
         int total = 0;
          
         if(URL.length() > 30){

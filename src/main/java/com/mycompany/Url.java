@@ -23,9 +23,4 @@ public class Url {
         }
             return string.toString();
         }
-    
-    
-    
-   
-    
-}
+    }

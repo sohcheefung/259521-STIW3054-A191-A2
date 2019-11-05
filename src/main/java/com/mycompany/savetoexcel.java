@@ -11,7 +11,6 @@ import java.io.FileOutputStream;
 public class savetoexcel {
     public void writeData() {
         try {
-
             Json link = new Json();
             HSSFWorkbook workbook = new HSSFWorkbook();
             HSSFSheet sheet = workbook.createSheet("Statistic");
@@ -21,8 +20,8 @@ public class savetoexcel {
             rowTitle.createCell(0).setCellValue("    Login ID          ");
             rowTitle.createCell(1).setCellValue("    Number of Repositories   ");
             rowTitle.createCell(2).setCellValue("    Number of Followers      ");
-            rowTitle.createCell(3).setCellValue("    Number of Events         ");
-            rowTitle.createCell(4).setCellValue("    Number of Subcriptions   ");
+            rowTitle.createCell(3).setCellValue("    Number of Followings         ");
+            rowTitle.createCell(4).setCellValue("    Number of Gists  ");
             rowTitle.createCell(5).setCellValue("    Type      ");
 
              //set row heading size, font and position
@@ -37,7 +36,6 @@ public class savetoexcel {
             }
             
              //column size
-             
             int r = 1;
             for (Define info : link.Scrape()) {
                  //Create row
@@ -62,7 +60,6 @@ public class savetoexcel {
                 Column6.setCellValue(info.getType());
                 r++;
             }
-             
              //column size
             for (int i = 1; i <= 35; i++)
                 sheet.autoSizeColumn(i);
