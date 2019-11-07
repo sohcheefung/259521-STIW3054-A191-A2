@@ -1,6 +1,6 @@
 # 259521-STIW3054-A191-A2
 # STUDENT INFO  
-SOH CHEE FUNG  259521         
+SOH CHEE FUNG  259521          
 # INTRODUCTION  
 You are required to develop a small system using MAVEN and Java programming language. The system should be able identify Zhamri github follower by using threads.  
 # RESULT/OUTPUT  
