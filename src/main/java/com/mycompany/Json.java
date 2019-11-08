@@ -17,32 +17,22 @@ import org.json.simple.parser.ParseException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Json {
-    
+public class Json {  
 public List<Define> Scrape(){
-  
+    
     List<Define> info = new ArrayList<Define>();
-        
-        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("| %-5s| %-15s| %-25s| %-25s| %-25s| %-25s| %-10s| %-15s|\n", "No.","Login ID","Number of Repository","Number of Followers","Number of followings","Number of Gists","Type","Thread Name");
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------");  
-        
+       
     try{
         
-        JSONArray URL = UrlArray.UrlArray("https://api.github.com/users/jasonway96/followers");
+        JSONArray URL = File.array();
+        
         int total = 0;
          
-        if(URL.length() > 30){
-             total = 30;
-        }else{
-             total = URL.length();
-        }
-        for (int i=0; i<total; i++){
+        for (int i=0; i<URL.length(); i++){
             JSONObject JObject = URL.getJSONObject(i);
             String followersurl = JObject.optString("url");
     
-            JSONObject URL1 = UrlObject.UrlObject(followersurl);
-               
+            JSONObject URL1 = UrlObject.UrlObject(followersurl+"?access_token=70f3c7b51b3f7d3ab2e3bed7fbfb77dd275f129e");  
             String loginId = URL1.optString("login");
             String totalrepos = URL1.optString("public_repos");
             String totalfollowers = URL1.optString("followers");
@@ -50,13 +40,13 @@ public List<Define> Scrape(){
             String totalgists = URL1.optString("public_gists");
             String type = URL1.optString("type");
              
-           
-            System.out.printf("| %-5s",i);
-            Thread run = new Thread(new Runnable() {
+            total++;
+            System.out.printf("| %-5s",total);
+            Thread run = new Thread(new Thread() {
             @Override
             public void run() {
     
-                System.out.printf("| %-15s| %-25s| %-25s| %-25s| %-25s| %-10s| %-15s|\n",loginId,totalrepos,totalfollowers,totalfollowings,totalgists,type,Thread.currentThread().getName());
+                System.out.printf("| %-19s| %-25s| %-25s| %-25s| %-25s| %-10s| %-15s|\n",loginId,totalrepos,totalfollowers,totalfollowings,totalgists,type,Thread.currentThread().getName());
                 info.add(new Define(loginId,totalrepos,totalfollowers,totalfollowings,totalgists,type));
                 }
             });
@@ -65,7 +55,7 @@ public List<Define> Scrape(){
             try{
              
                 run.join();
-                run.sleep(1000);
+                run.sleep(500);
                 
             }catch (InterruptedException e){
              e.printStackTrace();

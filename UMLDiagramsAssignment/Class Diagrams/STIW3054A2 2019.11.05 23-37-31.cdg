@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="STIW3054A2">
+  <ClassDiagramComponents>
+    <Class name="Define" package="com.mycompany" visibility="public" xPosition="236.0" yPosition="513.0">
+      <Fields>
+        <Field name="loginId" type="String" visibility="public"/>
+        <Field name="totalrepos" type="Strring" visibility="public"/>
+        <Field name="totalfollowers" type="String" visibility="public"/>
+        <Field name="totalfollowings" type="String" visibility="public"/>
+        <Field name="totalgist" type="String" visibility="public"/>
+        <Field name="type" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="loginId"/>
+          <Argument type="String" name="totalrepos"/>
+          <Argument type="String" name="totalfollowers"/>
+          <Argument type="String" name="totalfollowings"/>
+          <Argument type="String" name="totalgists"/>
+          <Argument type="String" name="type"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getloginId" returnType="String" visibility="public"/>
+        <Method name="setloginId" returnType="String" visibility="public">
+          <Argument type="String" name="loginId"/>
+        </Method>
+        <Method name="gettotalrepos" returnType="String" visibility="public"/>
+        <Method name="settotalrepos" returnType="String" visibility="public">
+          <Argument type="String" name="totalrepos"/>
+        </Method>
+        <Method name="gettotalfollowers" returnType="String" visibility="public"/>
+        <Method name="settotalfollowers" returnType="String" visibility="public">
+          <Argument type="String" name="totalfollowers"/>
+        </Method>
+        <Method name="gettotalfollowings" returnType="String" visibility="public"/>
+        <Method name="settotalfollowings" returnType="String" visibility="public">
+          <Argument type="String" name="totalfollowings"/>
+        </Method>
+        <Method name="gettotalgists" returnType="String" visibility="public"/>
+        <Method name="settotalgists" returnType="String" visibility="public">
+          <Argument type="String" name="totalgists"/>
+        </Method>
+        <Method name="getType" returnType="String" visibility="public"/>
+        <Method name="setType" returnType="String" visibility="public">
+          <Argument type="String" name="type"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Json" package="com.mycompany" visibility="public" xPosition="474.0" yPosition="355.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Scrape" returnType="List&lt;Define&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="com.mycompany" visibility="public" xPosition="474.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="savetoexcel" package="com.mycompany" visibility="public" xPosition="500.0" yPosition="189.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="writeData" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Url" package="com.mycompany" visibility="public" xPosition="33.0" yPosition="206.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Url" returnType="Reader" visibility="public" isStatic="true">
+          <Argument type="Reader" name="read"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UrlArray" package="com.mycompany" visibility="public" xPosition="35.0" yPosition="370.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="UrlArray" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="url"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UrlObject" package="com.mycompany" visibility="public" xPosition="67.0" yPosition="27.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="UrlObject" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="url"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Interface" package="" visibility="public" xPosition="1071.0" yPosition="104.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Format" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Application" package="" visibility="public" xPosition="791.0" yPosition="104.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="display" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FIle" package="" visibility="public" xPosition="789.0" yPosition="355.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="array" returnType="JSONArray" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="&lt;&lt;Create&gt;" source="com.mycompany.Json" target="com.mycompany.UrlObject" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.Json" target="com.mycompany.Define" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.Json" target="FIle" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.UrlObject" target="com.mycompany.Url" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.UrlArray" target="com.mycompany.Url" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.Main" target="com.mycompany.savetoexcel" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.Json" target="com.mycompany.UrlArray" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.Json" target="com.mycompany.Url" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.Main" target="Application" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="Application" target="Interface" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="&lt;&lt;Create&gt;&gt;" source="com.mycompany.savetoexcel" target="com.mycompany.Json" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

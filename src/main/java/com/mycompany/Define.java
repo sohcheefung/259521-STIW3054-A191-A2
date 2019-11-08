@@ -7,7 +7,7 @@ import java.util.*;
 public class Define {
     public String loginId, totalrepos, totalfollowers,totalfollowings,totalgists,type;
     
-    public Define(String loginId, String totalrepos, String totalfollowers, String totalfollowings, String totalgists, String type) {
+    public Define (String loginId, String totalrepos, String totalfollowers, String totalfollowings, String totalgists, String type) {
         //super();
         this.loginId = loginId;
         this.totalrepos = totalrepos;
@@ -16,7 +16,6 @@ public class Define {
         this.totalgists = totalgists;
         this.type = type;
     }
-
     
     public String getloginId(){
         return loginId;
@@ -24,7 +23,7 @@ public class Define {
     
     public void setloginId(String loginId){
         this.loginId = loginId;
-    }
+    }  
     
     public String gettotalrepos(){
         return totalrepos;
@@ -58,7 +57,7 @@ public class Define {
         return type;
     }
     
-    public void setType(String type){
+     public void setType(String type){
         this.type = type;
     }
 }
