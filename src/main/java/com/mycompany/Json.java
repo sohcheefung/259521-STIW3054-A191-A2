@@ -27,6 +27,8 @@ public List<Define> Scrape(){
         JSONArray URL = File.array();
         
         int total = 0;
+        
+       
          
         for (int i=0; i<URL.length(); i++){
             JSONObject JObject = URL.getJSONObject(i);
@@ -44,7 +46,7 @@ public List<Define> Scrape(){
             System.out.printf("| %-5s",total);
             Thread run = new Thread(new Thread() {
             @Override
-            public void run() {
+            public synchronized void run() {
     
                 System.out.printf("| %-19s| %-25s| %-25s| %-25s| %-25s| %-10s| %-15s|\n",loginId,totalrepos,totalfollowers,totalfollowings,totalgists,type,Thread.currentThread().getName());
                 info.add(new Define(loginId,totalrepos,totalfollowers,totalfollowings,totalgists,type));
@@ -61,6 +63,7 @@ public List<Define> Scrape(){
              e.printStackTrace();
             }
          }
+        
          return info;
          
     }catch (IOException e) {
@@ -70,7 +73,6 @@ public List<Define> Scrape(){
         
         }
          return null;
-  
     }
 }
      
